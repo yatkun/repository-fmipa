@@ -22,6 +22,7 @@ class PDFController extends Controller
             return 'adssadas';
         }
         $file = storage_path('app/public').'/'. $post->skripsi;
+        $url = asset('storage/' . $post->skripsi);
   
         if (file_exists($file)) {
 
