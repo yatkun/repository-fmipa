@@ -1,0 +1,41 @@
+
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  .author-input .position-relative:focus-within {
+    z-index: 2;
+  }
+  
+ 
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+
+  .form-registration input {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
+
+  .form-signin input {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
+
+  .form-registration .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  .form-floating .form-select {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
+  .author-input input {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
