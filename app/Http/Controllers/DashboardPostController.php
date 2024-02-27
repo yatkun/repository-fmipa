@@ -63,7 +63,7 @@ class DashboardPostController extends Controller
         $fullFileName = $fileName . "-" . date("Ymdhms", $t) . ".$extension";
 
 
-        $validatedData['skripsi'] = $request->file('skripsi')->store('public/post-skripsi', $fullFileName);
+        $validatedData['skripsi'] = $request->file('skripsi')->storeAs('public/post-skripsi', $fullFileName);
 
         $validatedData['excerpt'] = Str::limit(strip_tags($request->abstract), 225);
         $Save = Post::create($validatedData);
