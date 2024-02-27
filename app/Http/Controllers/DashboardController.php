@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-
+        
         return view('dashboard.index',[
             'title' => 'Dashboard',
             'member' => User::where('is_admin', 0)->count(),
