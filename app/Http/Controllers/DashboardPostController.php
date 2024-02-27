@@ -151,9 +151,8 @@ class DashboardPostController extends Controller
             $fileName = $validatedData['author1'];
           
             $fullFileName = $fileName . "-" . date("Ymdhms", $t) . ".pdf";
-    
-            $validatedData['skripsi'] = $request->file('skripsi')->storeAs('post-skripsi', $fullFileName);
-            
+
+            $validatedData['skripsi'] = $request->file('skripsi')->storeAs('public/post-skripsi', $fullFileName);
             // $image = request()->file('skripsi')->store('uploads', 'public');
             // $validatedData['skripsi'] = $image;
          
