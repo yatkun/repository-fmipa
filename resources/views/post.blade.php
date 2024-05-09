@@ -30,9 +30,18 @@
             </div>
 
             <div class="col-md-3">
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <h6 style="color: #6B074E">View/Open</h6>
                     <a href="/download/{{ $post->id }}" style="text-decoration: none; font-size:14px" ><i class="bi bi-file-earmark-lock2"></i> Full text</a>
+                </div> --}}
+                <div class="mb-3">
+                    <h6 style="color: #6B074E">View/Open</h6>
+                    @auth
+        <a href="{{ $post->skripsi }}" style="text-decoration: none; font-size:14px"><i class="bi bi-file-earmark-lock2"></i> Full text</a>
+    @else
+        <span style="font-size: 14px; color: red;">Login untuk akses file !</span>
+    @endauth
+                
                 </div>
                 <div class="mb-3">
                     <h6 style="color: #6B074E">URL</h6>

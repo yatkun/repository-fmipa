@@ -18,23 +18,26 @@ class PDFController extends Controller
     {
         $post = Post::find($id);
 
-        if ($post->skripsi == null){
-            return 'adssadas';
+        if ($post->skripsi){
+            return $post->skripsi;
         }
-        $file = storage_path('app').'/'. $post->skripsi;
+        // if ($post->skripsi == null){
+        //     return 'Data tidak tersedia';
+        // }
+        // $file = storage_path('app').'/'. $post->skripsi;
 
   
-        if (file_exists($file)) {
+        // if (file_exists($file)) {
 
-            $headers = [
-                'Content-Type' => 'application/pdf'
-            ];
+        //     $headers = [
+        //         'Content-Type' => 'application/pdf'
+        //     ];
 
-            $name = $post->auhtor1;
-            return response()->download($file, $name ,$headers, 'inline');
-            // return response()->download($file, 'Test File', $headers, 'inline');
-        }
-
+        //     $name = $post->auhtor1;
+        //     return response()->download($file, $name ,$headers, 'inline');
+        //     // return response()->download($file, 'Test File', $headers, 'inline');
+        // }
+        
         return 'Data tidak tersedia';
         
     }

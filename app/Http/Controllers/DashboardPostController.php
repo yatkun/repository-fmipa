@@ -53,17 +53,18 @@ class DashboardPostController extends Controller
                 'author3' => 'required',
                 'abstract' => 'required',
                 'category' => 'required',
-                'skripsi' => 'required|mimes:pdf|max:5120'
+                // 'skripsi' => 'required|mimes:pdf|max:5120'
+                'skripsi' => 'required'
             ]
         );
         $t = time();
 
-        $fileName = $validatedData['author1'];
-        $extension = pathinfo($validatedData['skripsi']->getClientOriginalName(), PATHINFO_EXTENSION);
-        $fullFileName = $fileName . "-" . date("Ymdhms", $t) . ".$extension";
+        // $fileName = $validatedData['author1'];
+        // $extension = pathinfo($validatedData['skripsi']->getClientOriginalName(), PATHINFO_EXTENSION);
+        // $fullFileName = $fileName . "-" . date("Ymdhms", $t) . ".$extension";
 
 
-        $validatedData['skripsi'] = $request->file('skripsi')->storeAs('public/post-skripsi', $fullFileName);
+        // $validatedData['skripsi'] = $request->file('skripsi')->storeAs('public/post-skripsi', $fullFileName);
 
         $validatedData['excerpt'] = Str::limit(strip_tags($request->abstract), 225);
         $Save = Post::create($validatedData);
@@ -139,25 +140,25 @@ class DashboardPostController extends Controller
         //     unset($validatedData['skripsi']);
         // }
 
-        if (request()->hasFile('skripsi') && request('skripsi') != '') {
-            $imagePath = storage_path('app/public/'.$post->skripsi);
+        // if (request()->hasFile('skripsi') && request('skripsi') != '') {
+        //     $imagePath = storage_path('app/public/'.$post->skripsi);
     
-            if(Storage::exists($imagePath)){
+        //     if(Storage::exists($imagePath)){
            
-                unlink($imagePath);
-            }
-            $t = time();
+        //         unlink($imagePath);
+        //     }
+        //     $t = time();
 
-            $fileName = $validatedData['author1'];
+        //     $fileName = $validatedData['author1'];
           
-            $fullFileName = $fileName . "-" . date("Ymdhms", $t) . ".pdf";
+        //     $fullFileName = $fileName . "-" . date("Ymdhms", $t) . ".pdf";
 
-            $validatedData['skripsi'] = $request->file('skripsi')->storeAs('public/post-skripsi', $fullFileName);
-            // $image = request()->file('skripsi')->store('uploads', 'public');
-            // $validatedData['skripsi'] = $image;
+        //     $validatedData['skripsi'] = $request->file('skripsi')->storeAs('public/post-skripsi', $fullFileName);
+        //     // $image = request()->file('skripsi')->store('uploads', 'public');
+        //     // $validatedData['skripsi'] = $image;
          
-        }
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->abstract), 225);
+        // }
+        // $validatedData['excerpt'] = Str::limit(strip_tags($request->abstract), 225);
 
         
 
@@ -177,11 +178,11 @@ class DashboardPostController extends Controller
 
         $post = Post::findOrFail($id);
 
-        $image_path = public_path() .'/storage' .'/' . $post->skripsi;
-        // dd($image_path);
-        if (file_exists($image_path)) // check if the image indeed exists
-            unlink($image_path);
-        $post->delete();
+        // $image_path = public_path() .'/storage' .'/' . $post->skripsi;
+        // // dd($image_path);
+        // if (file_exists($image_path)) // check if the image indeed exists
+        //     unlink($image_path);
+        // $post->delete();
 
         Post::destroy($post->id);
         return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');

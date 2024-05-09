@@ -95,7 +95,7 @@
                                         </select>
                                     </fieldset>
                                 </div>
-                                <div class="col-12 mt-3">
+                                {{-- <div class="col-12 mt-3">
                                     <label for="doc" class="form-label">Document (.pdf)</label>
                                     <input class="form-control form-control-sm @error('skripsi') 
                                     is-invalid
@@ -103,7 +103,18 @@
                                     @error('skripsi')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
+                                </div> --}}
+
+                                <div class="col-12 mt-3">
+                                    <label for="doc" class="form-label">Link dokumen</label>
+                                    <input class="form-control form-control-sm @error('skripsi') 
+                                    is-invalid
+                                    @enderror"" id="doc" type="text" name="skripsi">
+                                    @error('skripsi')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
+
                             </div>
                         </div>
 
