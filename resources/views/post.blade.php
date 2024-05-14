@@ -2,6 +2,8 @@
 
 @extends('layouts.main')
 
+
+
 @section('content')
     <article>
 
@@ -55,3 +57,4 @@
 
     <a href="/">Back to home</a>
 @endsection
+

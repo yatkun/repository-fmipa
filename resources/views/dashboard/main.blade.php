@@ -11,10 +11,9 @@
 
     <link rel="stylesheet" href="/css/iconly.css">
     <link rel="stylesheet" href="/extensions/simple-datatables/style.css">
-    <link rel="stylesheet" href="/css/simple-datatables.css">
-    <link rel="stylesheet" href="/extensions/quill/quill.snow.css">
-    <link rel="stylesheet" href="/extensions/quill/quill.bubble.css">
+ 
     <link rel="stylesheet" href="/extensions/toastify-js/src/toastify.css">
+    @yield('css')
 </head>
 <style>
     .nav-logout {
@@ -108,22 +107,14 @@
     <script src="/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="/js/pages/simple-datatables.js"></script>
 
-    {{-- Quill --}}
-    <script src="/extensions/quill/quill.min.js"></script>
-    <script src="/js/pages/quill.js"></script>
 
     {{-- toast --}}
     <script src="/extensions/toastify-js/src/toastify.js"></script>
     <script src="/js/pages/toastify.js"></script>
 
-    <script>
-        var quill = new Quill('#quill_editor', {
-            theme: 'snow'
-        });
-        quill.on('text-change', function(delta, oldDelta, source) {
-            document.getElementById("quill_html").value = quill.root.innerHTML;
-        });
-    </script>
+   
+
+    @yield('js')
 </body>
 
 </html>
