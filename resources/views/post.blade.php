@@ -26,7 +26,7 @@
                     </div>
                     <div class="col">
                         <h6 style="color: #6B074E">Abstract</h6>
-                        <p class="abstract">{!! $post['abstract'] !!}</p>
+                        <p class="abstract" style="font-size: 14px !important">{!! $post['abstract'] !!}</p>
                     </div>
                 </div>
             </div>
