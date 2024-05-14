@@ -19,10 +19,10 @@
                             <h6 class="author">{{ $post['author2'] }}</h6>
                             <h6 class="author">{{ $post['author3'] }}</h6>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <h6 style="color: #6B074E">Published</h6>
                             <p class="author">{{ $post->created_at->format('d M Y') }}</p>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col">
                         <h6 style="color: #6B074E">Abstract</h6>
